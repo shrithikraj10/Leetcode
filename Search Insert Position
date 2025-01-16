@@ -1,0 +1,11 @@
+class Solution(object):
+    def searchInsert(self, nums, target):
+        # Iterate through the list and check where the target can be inserted
+        for i in range(len(nums)):
+            if nums[i] == target:
+                return i  # Target found, return the index
+            elif nums[i] > target:  # If target is less than nums[i], insert at this position
+                return i
+        
+        # If the target is greater than all elements, append at the end
+        return len(nums)
